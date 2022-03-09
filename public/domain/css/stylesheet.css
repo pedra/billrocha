@@ -1768,7 +1768,7 @@ input:-internal-autofill-selected {
 .in-line {
   display: flex;
   gap: 1rem;
-  color: #fff;
+  color: var(--bs-light);
   font-weight: bold;
   justify-content: flex-start;
   align-items: center;
@@ -1783,5 +1783,36 @@ input:-internal-autofill-selected {
 }
 
 .in-line input[type="checkbox"]:checked {
-  background: rgb(4, 173, 4) !important;
+  background: var(--bs-green) !important;
+}
+
+.br-contacts i {
+  color: var(--bs-green);
+}
+
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.lang img {
+  width:  32px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: .6s;;
+  transform: scale(.6);
+}
+
+.lang img.active {
+  transform: none;
+}
+
+.container {
+  transition: .6s;
+  opacity: 0;
+}
+.container.active {
+  opacity: 1 !important;
 }

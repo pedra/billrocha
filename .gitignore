@@ -11,3 +11,4 @@ sync.bat
 /public/js
 sftp-config.json
 /public/css
+/doc
