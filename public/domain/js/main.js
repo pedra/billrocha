@@ -7,6 +7,7 @@ window.onload = () => {
 
     _('#contact-form').onsubmit = e => {
         e.preventDefault()
+        return alert('SYSTEM OFFLINE\n\nPlease contact email prbr@ymail.com, sending the details of this form.')
 
         var c = _a('#contact-form input[type="checkbox"]')
         var i = 0
