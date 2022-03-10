@@ -1796,6 +1796,7 @@ input:-internal-autofill-selected {
   align-items: center;
   padding: 1rem;
   gap: 1rem;
+  height: max-content;
 }
 .lang img {
   width:  32px;
@@ -1815,4 +1816,13 @@ input:-internal-autofill-selected {
 }
 .container.active {
   opacity: 1 !important;
+}
+
+#br-form {
+  transition: .6s;
+  opacity: 0;
+}
+
+#br-form.active {
+  opacity: 1;
 }

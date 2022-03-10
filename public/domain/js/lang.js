@@ -1,4 +1,4 @@
-const config = {
+const cfg = {
     lang: {
         en: [
             "For Sale!",
@@ -12,7 +12,9 @@ const config = {
             "Enter Your Email",
             "Enter Your Offer",
             "Please select one or more domains.",
-            "Send My Offer"
+            "Send My Offer",
+            "SYSTEM OFFLINE\n\nContact us at prbr@ymail.com, sending the details of this form.",
+            "Data sent successfully!\n\nWe will contact you soon."
         ],
         pt: [
             "À Venda!",
@@ -26,13 +28,19 @@ const config = {
             "Digite Seu Email",
             "Faça Sua Oferta",
             "Selecione um ou mais domínios.",
-            "Enviar Minha Oferta"
+            "Enviar Minha Oferta",
+            "SISTEMA OFFLINE\n\nEntre em contato pelo e-mail prbr@ymail.com, enviando os detalhes deste formulário.",
+            "Dados enviados com sucesso!\n\nEntraremos em contato em breve."
         ],
+        active: 'en'
     },
-    actlang: 'en',
     domains: [
         "VotaBr.com",
         "Urna22.com",
         "VotaBrasil2022.com"
-    ]
+    ],
+    email: {
+        url: "https://postmail.invotes.com/send",
+        token: "6mlzbcowyz6vn1tg1nxfuu3m"
+    }
 }
