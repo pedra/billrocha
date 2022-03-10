@@ -6,7 +6,8 @@ const dfm = '#br-form'
 let hide = false
 
 window.onload = () => {
-    cfg.lang.active = localStorage.getItem(lgs) || 'en'
+    var l = localStorage.getItem(lgs)
+    cfg.lang.active = l == 'pt' || l == 'en' ? l : (navigator.languages.find(a => a == 'pt-BR' || a == 'pt') ? 'pt' : 'en')
     localStorage.setItem(lgs, cfg.lang.active)
 
     hide = localStorage.getItem(bts) == 'true' ? true : false
@@ -42,16 +43,18 @@ const setDomains = () => {
 
 const changeLang = e => {
     cfg.lang.active = e.target.id.replace('lang-', '')
-    _a('.lang img').forEach(a => a.classList.remove('active'))
-    e.target.classList.add('active')
     localStorage.setItem(lgs, cfg.lang.active)
     renderLang()
 }
 
-const renderLang = () => _a('[data-lang]').forEach(a => {
+const renderLang = () => {
+    _a('.lang img').forEach(a => a.classList.remove('active'))
+    _(`#lang-${cfg.lang.active}`).classList.add('active')
+
+    _a('[data-lang]').forEach(a => {
     d = a.dataset.lang - 1
-    a[(d >= 7 && d <= 9) ? 'placeholder' : 'innerHTML'] = cfg.lang[cfg.lang.active][d]
-})
+    a[(d >= 7 && d <= 9) ? 'placeholder' : 'innerHTML'] = cfg.lang[cfg.lang.active][d]})
+}
 
 const sendEmail = () => {
     var f = _(fm)
