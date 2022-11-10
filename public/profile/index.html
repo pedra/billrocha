@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>Profile :: BillRocha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Profile">
+    <meta name="author" content="https://billrocha.com/">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+
+            /* Effect */
+            transition: 0.1s 0.6s all;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            min-width: 100%;
+            font-family: 'Quicksand', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            text-shadow: 0 2px 4px rgb(0 0 0 / 70%);
+            background: #959595;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #d1d1d1;
+            background: #a1a1a1;
+            color: #726565;
+            text-shadow: 0px 1px 1px rgb(0 0 0 / 40%);
+        }
+
+        /* Card container     ----------------------------------- */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Photo card side    ----------------------------------- */
+        .photo {
+            width: 120px;
+            margin: 0 1rem 0 0;
+        }
+
+        .photo img {
+            width: 100%;
+            border-radius: 50%;            
+            box-shadow: -10px -10px 24px rgb(255 255 255 / 45%), 20px 20px 24px rgb(0 0 0 / 20%);
+
+            /* Effect */
+            filter: blur(300px);
+            transform: scale(0);
+        }
+
+        .photo:hover img {
+            transition: 1s all cubic-bezier(0, 2.01, 0.29, 0.26) !important;
+            box-shadow: -10px -10px 34px rgb(0 0 0 / 40%), 20px 20px 24px rgb(255 255 255 / 30%);
+            transform: scale(.9) !important;
+        }
+
+        /* Data side          ----------------------------------- */
+        .data {
+            transform: perspective(1000px) rotateY(45deg) translateX(200px);
+            transition-delay: .5s;
+            transform-origin: right;
+            opacity: 0;
+        }
+
+        .data h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            transform: translateY(-100px) rotate(30deg);
+            transition-delay: .5s;
+            opacity: 0;
+        }
+
+        .data p {
+            font-size: 1rem;
+            opacity: 0;
+            transform: translateY(100px) rotate(-30deg);
+            transition-delay: .6s;
+        }
+
+        /* Activation Effects ----------------------------------- */
+        body.on .photo img {
+            transition: 0.1s 0.4s all cubic-bezier(0.18, 0.89, 0.32, 4), 0.3s 0.3s filter;
+            transform: none;
+            filter: none;
+        }
+
+        body.on .data,
+        body.on .data p,
+        body.on .data h1 {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Mobile Screens     ----------------------------------- */
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 400px;
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .data {
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body onclick="location.href='https://billrocha.com'">
+    <div class="container">
+        <div class="photo">
+            <img src="./profile.png" alt="Profile">
+        </div>
+        <div class="data">
+            <h1>Paulo Rocha</h1>
+            <p>Mais de 2 décadas na criação de produtos de TI para empresas como IBM, L'oreal, City Bank...</p>
+        </div>
+    </div>
+
+    <footer>https://billrocha.com</footer>
+
+    <script>window.onload = () => document.body.classList.add('on')</script>
+
+</body>
+
+</html>
