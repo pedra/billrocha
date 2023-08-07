@@ -406,7 +406,7 @@
 		const toggleHands = f => _('.facebook-comments').classList[f ? 'remove' : 'toggle']('active')
 		const checkLoginState = () => {
 			FB.getLoginStatus(function(response) {
-				statusChangeCallback(response)
+				//statusChangeCallback(response)
 				console.log('Facebook Response: ', response)
 			})
 		}
