@@ -383,8 +383,8 @@
 
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v17.0&appId=825823005734839&autoLogAppEvents=1" nonce="qepQVQiD"></script>
-	
-    <script>
+
+	<script>		
 		window.fbAsyncInit = function() {
 			FB.init({
 				appId      : '{825823005734839}',
@@ -394,7 +394,17 @@
 			})		
 			FB.AppEvents.logPageView()		
 		}
-
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0]
+			if (d.getElementById(id)) {return}
+			js = d.createElement(s)
+			js.id = id
+			js.src = "https://connect.facebook.net/en_US/sdk.js"
+			fjs.parentNode.insertBefore(js, fjs)
+		}(document, 'script', 'facebook-jssdk'))
+	</script>
+	
+    <script>
         const page = e => {
 			toggleHands(true)
             _('#card').classList[0 == e ? 'add' : 'remove']('on') 
@@ -424,19 +434,9 @@
             _("#pix").onclick = tg 
 			_("#qrcodeCopy").onclick = tg
 			_("#qrcode").onclick = tg
-			page(1)
 
+			page(1)			
 
-			
-
-			(function(d, s, id){
-				var js, fjs = d.getElementsByTagName(s)[0]
-				if (d.getElementById(id)) {return}
-				js = d.createElement(s)
-				js.id = id
-				js.src = "https://connect.facebook.net/en_US/sdk.js"
-				fjs.parentNode.insertBefore(js, fjs)
-			}(document, 'script', 'facebook-jssdk'))
 
 			checkLoginState()					
         }		
