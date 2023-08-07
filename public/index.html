@@ -340,12 +340,28 @@
                 <div id="pix"><img
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgBAMAAAAQtmoLAAAAA3NCSVQICAjb4U/gAAAAMFBMVEX///8Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava4Ava41inAoAAAAEHRSTlMAESIzRFVmd4iZqrvM3e7/dpUBFQAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAIkSURBVFiFnZixTsMwEIbdMLAwkJGtdKwAwQYDLYwsiLkDQuI1ELwED9AHQEIsTLwACxIZQaISDCwonVBFaHMkbdLGzu/EPzdF9n/5HMc+31kpaL3B5Br3QPMuhiLx/aqzw6VM7dNVvyGZ3bnpl4a5w6Tp5NCRuQUcwBFRADghigAnhAZwQOgAB4QBqEWYgFpECVCDKANqEABQiUCASgQEVCAwoAJhAVgRNoAV0bXpRd6RvnHzMLDov14s8cDrIfnveUX4aAP9tl2e2Kmpj8+wsNFqtdbTUZnf8ZF2+r5vDms/fdljQt80AEnT7lMYhsa/yP5B1DQRCWBt+mD8i86iX0MkgPwNAQBoAvMFGqKDFKZ/AeENsUR3LyC28CDMAQYAoIuMKZgjioCiypyBHOHp+2AhM+c4R+iAha4EEHlWaPXkwhJAZJyuqBUxbaYEAJF+4nBVcphJAUDkO1m6YOsn2vYrAshEqeWyfrqmFQKInIBPmCHAbKTWV8fIIT7I9lTJAnWLmuVnp7EHO0YKcVPGG26PFG632ph3GOCOOMTtkeWjo0P/CHaM+Gmlfxy9NKyLrxQEU5v8Y3nzG4jeonQQ4MMMHcj4UEkHYz7c0wcKf2TRhyJ/7NIHO5865OacnGRGpj9cgsWncF2LXCxJIp+G0okun0rTyTpfDtAFB1/S0EUTX5bRhR9fWtLFK18e0wU4X+LTlwj8NQV9EcJftfCXOVXXRX/NbZzbqNTDrwAAAABJRU5ErkJggg=="
                         alt="Pix"><span>Pix-me here!</span></div>
+
 				<div class="facebook-comments">
 					<span onclick="toggleHands()">Talk to my hand <img src="/handmade.png" width="32"/></span>
 					<div class="fb-container">
-						<div class="fb-comments" data-href="https://billrocha.com" data-width="286" data-numposts="5"></div>
+						<div 
+							class="fb-comments" 
+							data-href="https://billrocha.com" 
+							data-width="286" 
+							data-numposts="5"></div>
+						<div 
+							class="fb-login-button" 
+							data-width="100%" 
+							data-size="large" 
+							data-button-type="" 
+							data-layout="" 
+							data-auto-logout-link="false" 
+							data-use-continue-as="true"
+							data-onlogin="checkLoginState"
+							data-scope="public_profile,email"></div>
 					</div>
 				</div>
+
 				<div class="terms"><a href="/terms.html">Terms & Privacy</a></div>
             </div>
         </div>
@@ -361,50 +377,68 @@
                 value="00020126580014BR.GOV.BCB.PIX01367fb1f043-f3c8-44be-9700-c4b4b3a4b6775204000053039865802BR5925Paulo Roberto Batista da 6009SAO PAULO61080540900062160512NUgJ7pICR3ye6304D2E7">
         </p>
         <div class="ou">OU <i class="far fa-hand-point-down"></i></div>
-        <p><a href="https://nubank.com.br/pagar/1k4roo/gJ7pICR3ye" target="new">Acesse o NuBank <i
-                    class="fas fa-external-link-square-alt"></i></a></p>
+        <p><a href="https://nubank.com.br/pagar/1k4roo/gJ7pICR3ye" target="new">Acesse o NuBank <i class="fas fa-external-link-square-alt"></i></a></p>
     </div>
 
     <div class="handmade"><a href="https://www.instagram.com/thehandmademovement"><img src="/handmade.png"></a></div>
 
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v17.0&appId=825823005734839&autoLogAppEvents=1" nonce="qepQVQiD"></script>
-    
+	
     <script>
-        "use strict";
-        var version = "1.0.1",
-            _0x555a = ["classList", "onload", "getElementById", "card", "add", "remove", "title"];
-        ! function (e, o) {
-            ! function (o) {
-                for (; --o;) e.push(e.shift())
-            }(++o)
-        }(_0x555a, 128);
-        var _0x24b9 = function (e, o) {
-                return _0x555a[e -= 0]
-            },
-            page = function (e) {
-				toggleHands(true)
-                document[_0x24b9("0x0")](_0x24b9("0x1")).classList[_0x24b9(0 == e ? "0x2" : "0x3")]("on"), setTimeout(
-                    function () {
-                        document.getElementById(_0x24b9("0x4"))[_0x24b9("0x5")][0 == e ? "remove" : _0x24b9("0x2")](
-                            "on")
-                    }, 500)
-            },
-            _ = e => document.querySelector(e) || !1,
-            tg = e => {
-                var o = e.currentTarget.id;
-                return "qrcodeCopy" == o && (_("#qrcodeId").select(), _("#qrcodeId").setSelectionRange(0, 99999),
-                    document.execCommand("copy"), alert(
-                        "Código copiado!\nAbra seu aplicativo bancário e cole o PIX.")), _("#qrcode").classList[
-                    "pix" == o ? "add" : "remove"]("on")
-            };
-        window[_0x24b9("0x6")] = function () {
-            return _("#pix").onclick = tg, _("#qrcodeCopy").onclick = tg, _("#qrcode").onclick = tg, page(1)
-        };
-
-		function toggleHands(force = false) {
-			document.querySelector('.facebook-comments').classList[force ? 'remove' : 'toggle']('active')
+        const page = e => {
+			toggleHands(true)
+            _('#card').classList[0 == e ? 'add' : 'remove']('on') 
+			setTimeout(() => _('#title').classList[0 == e ? 'remove' : 'add']('on'), 500)
+        }
+        const _ = e => document.querySelector(e)
+        const tg = e => {
+            var o = e.currentTarget.id
+            return "qrcodeCopy" == o && 
+				(
+					_("#qrcodeId").select(), 
+					_("#qrcodeId").setSelectionRange(0, 99999),
+                	document.execCommand("copy"), 
+					alert("Código copiado!\nAbra seu aplicativo bancário e cole o PIX.")
+				), 
+				_("#qrcode").classList["pix" == o ? "add" : "remove"]("on")
+        }
+		const toggleHands = f => _('.facebook-comments').classList[f ? 'remove' : 'toggle']('active')
+		const checkLoginState = () => {
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response)
+				console.log('Facebook Response: ', response)
+			})
 		}
+
+        window.onload = function () {
+            _("#pix").onclick = tg 
+			_("#qrcodeCopy").onclick = tg
+			_("#qrcode").onclick = tg
+			page(1)
+
+
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '{825823005734839}',
+					cookie     : true,
+					xfbml      : true,
+					version    : 'v17.0'
+				})		
+				FB.AppEvents.logPageView()		
+			}
+
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0]
+				if (d.getElementById(id)) {return}
+				js = d.createElement(s)
+				js.id = id
+				js.src = "https://connect.facebook.net/en_US/sdk.js"
+				fjs.parentNode.insertBefore(js, fjs)
+			}(document, 'script', 'facebook-jssdk'))
+
+			checkLoginState()					
+        }		
     </script>
 </body>
 
