@@ -1,6 +1,6 @@
-import { Lang } from "/js/lang.js";
-import { Server } from "/js/server.js";
-import { Course } from "/js/course.js";
+import { Lang } from "./lang.js";
+import { Server } from "./server.js";
+import { Course } from "./course.js";
 
 class Auth {
 
