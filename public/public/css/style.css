@@ -1,0 +1,177 @@
+@import url('./utils.css');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: content-box;
+}
+
+
+html,
+body {
+	height: 100vh;
+	background: #f1f1f1;
+	color: #223344;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* button,
+select {
+	padding: .5rem 1rem;
+	border-radius: 6px;
+	border: none;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .4) inset,
+		1px 3px 12px rgba(0, 0, 0, .2);
+	cursor: pointer;
+} */
+
+
+.container {
+	margin: 0 auto;
+	max-width: 800px;
+	width: 100%;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+.profile {
+	display: none;
+	width: 100%;
+	margin: 0;
+	justify-content: space-between;
+	align-items: center;
+	gap: .5rem;
+	padding: 1rem;
+	background: #dddddd;
+}
+
+.profile.on {
+	display: flex;
+	gap: .5rem;
+}
+
+.person {
+	display: flex;
+	gap: .5rem;
+	align-items: center;
+}
+
+.person div {
+	display: flex;
+	flex-direction: column;
+}
+
+.person h2 {
+	font-size: 1.1rem;
+}
+
+.person p,
+.person p * {
+	font-size: .8rem;
+}
+
+.person img {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px black inset, 0 12px 30px rgba(0, 0, 0, .2);
+}
+
+.form,
+.result {
+	margin: 1rem auto;
+	max-width: 700px;
+	padding: 3rem;
+}
+
+.form {
+	/* background: #bceef1; */
+	padding: 3rem;
+	display: none;
+	border: 1px solid #123;
+	width: auto;
+}
+
+.form.on {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form span {
+	min-width: 4.2rem;
+}
+
+.form .control {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.form .control * {
+	width: 100%;
+}
+
+/* .form-input,
+.form-control {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-input {
+	margin: 0 0 1rem 0;
+	gap: .3rem;
+}
+
+.form-control {
+	margin: 2rem 0 1rem 0;
+	gap: 1rem;
+}
+
+.form-input input,
+.form-control button {
+	padding: .5rem;
+	border-radius: 6px;
+} */
+
+
+.result {}
+
+.result p {
+	margin: .3rem -0.5rem;
+	padding: .5rem;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.result .error {
+	background: red;
+	color: white
+}
+
+
+table {
+	min-width: 300px;
+	padding: 0;
+	margin: .4rem 0;
+}
+
+table th {
+	padding: .5rem 1rem;
+	text-align: start;
+	border-bottom: 1px solid black;
+}
+
+table td {
+	padding: .5rem 1rem;
+	border-bottom: 1px solid #cccccc;
+}
