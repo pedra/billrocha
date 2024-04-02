@@ -324,32 +324,37 @@
 
     <div class="handmade"><a href="https://www.instagram.com/thehandmademovement"><img src="/handmade.png"></a></div>	
 	
-    <script>
-        const page = e => {
-            _('#card').classList[0 == e ? 'add' : 'remove']('on') 
+    ript>
+		const page = e => {
+			_('#card').classList[0 == e ? 'add' : 'remove']('on')
 			setTimeout(() => _('#title').classList[0 == e ? 'remove' : 'add']('on'), 500)
-        }
-        const _ = e => document.querySelector(e)
-        const tg = e => {
-            var o = e.currentTarget.id
-            return "qrcodeCopy" == o && 
-				(
-					_("#qrcodeId").select(), 
-					_("#qrcodeId").setSelectionRange(0, 99999),
-                	document.execCommand("copy"), 
-					alert("Código copiado!\nAbra seu aplicativo bancário e cole o PIX.")
-				), 
-				_("#qrcode").classList["pix" == o ? "add" : "remove"]("on")
-        }	
+		},
+			_e = {},
+			_ = e => {
+				if (_e[e]) return _e[e]
+				let x = document.querySelector(e) || false
+				if (x) return _e[e] = x
+			},
+			tg = e => {
+				var o = e.currentTarget.id
+				return "qrcodeCopy" == o &&
+					(
+						_("#qrcodeId").select(),
+						_("#qrcodeId").setSelectionRange(0, 99999),
+						document.execCommand("copy"),
+						alert("Código copiado!\nAbra seu aplicativo bancário e cole o PIX.")
+					),
+					_("#qrcode").classList["pix" == o ? "add" : "remove"]("on")
+			}
 
-        window.onload = function () {
-            _("#pix").onclick = tg 
+		window.onload = function () {
+			_("#pix").onclick = tg
 			_("#qrcodeCopy").onclick = tg
 			_("#qrcode").onclick = tg
 
-			page(1)				
-        }		
-    </script>
+			page(1)
+		}		
+	</script>
 </body>
 
 </html>
