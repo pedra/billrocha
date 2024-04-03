@@ -330,11 +330,12 @@
 			setTimeout(() => _('#title').classList[0 == e ? 'remove' : 'add']('on'), 500)
 		},
 		_e = {},
-		_ = e => {
+		_ = (e, b=false) => {
 			if (_e[e]) return _e[e]
-			let x = document.querySelector(e) || false
+			let x = document[`querySelector${b?'All':''}`](e) || false
 			if (x) return _e[e] = x
 		},
+		_a = e => _(e, true),
 		tg = e => {
 			var o = e.currentTarget.id
 			return "qrcodeCopy" == o &&
