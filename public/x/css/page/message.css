@@ -7,6 +7,15 @@ header {
 	position: relative;
     background: #000;
     box-shadow: 0 20px 40px rgb(0 0 0 / 74%);
+
+	margin-top: -72px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+header.mediaOn {
+	margin-top: 0;
+    opacity: 1;
 }
 
 main {
@@ -24,16 +33,16 @@ main .container {
 	justify-content: flex-end;
 }
 
-main .container.chat {
-	/* position: absolute; */
-	/* inset: 0; */
-}
+/* footer {
+    background: #ddd;
+} */
 
 .display {
     background: #000;
     position: fixed;
     inset: 0;
     z-index: 2000;
+	transition: 2s;
 }
 
 .display #vremote {
@@ -46,10 +55,14 @@ main .container.chat {
 .display #vlocal {
     position: absolute;
     background: #000;
-    border: 1px solid #666;
+    /* border: 1px solid #666; */
     bottom: 1rem;
     right: 1rem;
     width: 25%;
+}
+
+.display #vlocal[poster] {
+	scale: 0.3;
 }
 
 .display #full {
@@ -98,9 +111,10 @@ main .container.chat {
     display: flex;
     align-items: center;
     backdrop-filter: blur(17px);
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 0 0.5rem 1rem;
-    border: 1px solid #bbb;
+    /* background: rgba(255, 255, 255, 0.2); */
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+	margin: 0 -1rem;
+    /* border: 1px solid #bbb; */
 }
 
 .controls * {

@@ -19,6 +19,7 @@ class MessageClass {
 	type = 'sender'
 	inter = null
 
+	_header = null
 	_vlocal = null
 	_vremote = null
 	_main = null
@@ -53,6 +54,7 @@ class MessageClass {
 	async init() {
 		this._vlocal = __('#vlocal')
 		this._vremote = __('#vremote')
+		this._header = __('header')
 		this._main = __('main')
 		this._messages = __('#messages')
 		this._message = __('#message')
@@ -278,6 +280,10 @@ class MessageClass {
 		if (status == 'toggle') status = !this.led[led].classList.contains('on')
 
 		this.led[led].classList.remove('on', 'off')
+
+		this._header.classList[
+			this.led['remote'].classList.contains('on') ? 'add' : 'remove'
+		]('mediaOn')
 
 		if (undefined == typeof status) return
 		this.led[led].classList.add([status ? 'on' : 'off'])

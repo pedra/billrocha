@@ -18,7 +18,7 @@ body.dark .messages .msg.me {
 }
 
 body.dark .controls {
-	background: rgb(0 0 0 / 21%);
+	/* background: rgb(0 0 0 / 21%); */
 	border: none;
 	padding: 0.5rem 0.5rem 0.5rem 1rem;
     margin: 0 -1rem;
@@ -36,15 +36,21 @@ header.chat .display {
     height: 72px;
     bottom: auto;
     padding: 1rem;
+	transition: 0.2s;
 }
 
 header.chat .display #vlocal {
     position: relative;
     background: #000;
-    border: none;
+    /* border: none; */
     height: 100%;
 	width: auto;
 	inset: auto;
+}
+
+
+header.chat .display #vlocal[poster] {
+	scale: 0.5;
 }
 
 header.chat .display #vremote {
