@@ -1,0 +1,31 @@
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--white-5);
+    font-size: .9rem;
+    color: var(--white-5);
+}
+
+.status-bar span {
+    display: inline-flex;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: center;
+    border-right: 1px solid var(--opac);
+    padding: 0 .5rem;
+}
+
+.status-bar span:first-child {
+    flex: 1;
+}
+
+.status-bar span:last-child {
+    border: none;
+}

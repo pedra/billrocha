@@ -1,0 +1,159 @@
+
+body {
+	height: 100vh;
+}
+
+main {
+    margin-top: 210px;
+}
+
+main .container {
+	display: flex;
+    flex-direction: column;
+    flex: 1;
+	position: relative;
+	justify-content: flex-end;
+}
+
+main .container.chat {
+	position: absolute;
+	inset: 0;
+}
+
+.display {
+    background: #000;
+    position: fixed;
+    top: 1rem;
+    z-index: 2000;
+	height: 195px;
+}
+
+.display #vremote {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+}
+
+.display #vlocal {
+    position: absolute;
+    background: #000;
+    border: 1px solid #fff;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+	margin: 1rem 0;
+    backdrop-filter: blur(6px);
+	scroll-behavior: smooth;
+	overflow: hidden auto;
+}
+
+.messages:empty {
+    margin: 0;
+}
+
+.messages .msg {
+    display: flex;
+    padding: 0.5rem 1rem;
+    color: #890;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.messages .msg.me {
+    align-self: flex-end;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+	color: #817;
+	font-style: italic;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(17px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 0 0.5rem 1rem;
+    border: 1px solid #bbb;
+}
+
+.controls * {
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #000;
+}
+
+.controls input {
+	width: 100%;
+	text-shadow: 0 1px 1px #777;
+}
+
+.controls button {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+
+.config {
+    /* padding: 0.5rem; */
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.config input[type="checkbox"],
+.config input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    appearance: auto;
+}
+
+.config label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+	padding: 0;
+	margin: 0.2rem 0 0 0;
+}
+
+
+.status {
+   	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(86px, 2fr));
+	margin: 0.5rem 0 0 0;
+}
+
+.status div {
+	display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status div span {
+	display: block;
+    background: #ccc;
+    height: 1rem;
+    width: 1rem;
+    box-shadow: 0 0 2px #fff;
+}
+
+.status div.on span {
+	background: #0F0;
+}
+
+.status div.off span {
+	background: #F00;
+}

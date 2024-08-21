@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Messenger</title>
+	<link rel="stylesheet" href="/x/css/message.css">
+	<script src="/x/js/peerjs.min.js"></script>
+	<script src="/x/js/message.mjs" type="module" defer></script>
+</head>
+
+<body>
+
+	<header>
+		<div class="container">
+			<div class="display">
+				<video id="vlocal" autoplay playsinline></video>
+				<video id="vremote" autoplay playsinline></video>
+			</div>			
+		</div>
+	</header>
+
+	<main>
+		<div class="container chat">
+			<div class="messages" id="messages"></div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			<div class="controls">
+				<input type="text" id="message" placeholder="Message here...">
+				<button id="send" title="send">
+					<span class="material-symbols-outlined">send</span>
+				</button>
+				<button id="close" title="close">
+					<span class="material-symbols-outlined">close</span>
+				</button>
+			</div>
+
+			<div class="status">
+				<div id="sta-peer">
+					<span></span>
+					peer
+				</div>
+				<div id="sta-media">
+					<span></span>
+					media
+				</div>
+				<div id="sta-remote">
+					<span></span>
+					remote
+				</div>
+				<div id="sta-status">
+					<span></span>
+					status
+				</div>
+			</div>
+
+			<div class="config">
+				<label for="receiver">
+					<input type="checkbox" id="receiver">It's a receiver (restart)
+				</label>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>

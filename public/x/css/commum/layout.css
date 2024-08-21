@@ -1,0 +1,58 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	overflow: auto;
+}
+
+.drag {
+	-webkit-user-select: none;
+    -webkit-app-region: drag;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    width: 100%;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.drag img {
+	width: 18px;
+	height: 18px;	
+}
+
+header, main, footer {
+	width: 100%;	
+	/* padding: 1rem;	 */
+    display: flex;
+}
+
+.container {
+	max-width: 600px;
+	padding: 0.5rem 1rem;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* MAIN
+----------------------------------------------------------------------------- */
+main {
+	position: relative;
+	flex-direction: column;
+	z-index: 100;
+	flex: 1;
+	overflow-x: auto;
+    overflow-y: hidden;
+}
+
+main .container {
+	border-radius: var(--radius-1);
+}

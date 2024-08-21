@@ -1,0 +1,70 @@
+.hom-contact {
+
+}
+
+.hom-contact nav {
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 2fr));
+    gap: 1rem;
+}
+
+.hom-contact nav a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	padding: 0;
+	font-weight: bold;
+
+	backdrop-filter: blur(15px);
+    border: 1px solid #2c3e5026;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px #2c3e5026;
+}
+
+.hom-contact nav a i {
+	color: #2c3e50;
+	font-size: 2rem;
+
+	margin-right: -1px;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	line-height: 1rem;	
+	transition: transform 0.2s ease-in-out;
+}
+
+.hom-contact nav a img {
+	width: 3rem;
+    height: 3rem;
+    filter: invert(1);
+    padding: 0.5rem;
+	transition: transform 0.2s ease-in-out;;
+}
+
+.hom-contact nav a:has(img) {
+	display: flex;
+	filter: none;
+}
+
+.hom-contact nav a:hover {
+	transition: .2s;
+	/* background: #2c3e50;
+	color: #fff !important */
+}
+
+.hom-contact nav a:hover img,
+.hom-contact nav a:hover i {
+	transform: scale(1.1);
+	filter: none;
+	background: #2c3e50;
+	color: #fff;
+	border-radius: 5px;
+}
+
+@media screen and (max-width: 590px) {
+
+}
