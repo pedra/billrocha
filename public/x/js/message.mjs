@@ -21,11 +21,12 @@ class MessageClass {
 
 	_vlocal = null
 	_vremote = null
+	_main = null
 	_messages = null
 	_message = null
 	_send = null
 	_close = null
-	_receiver = null
+	_full = null
 
 	led = {
 		peer: null,
@@ -38,23 +39,26 @@ class MessageClass {
 		local: null,
 		remote: null,
 		media: {
-			video: {facingMode: 'user'},
+			video: false,
 			audio: true
 		}
 	}
 
-	constructor () {
-		this.type = location.pathname.split('/').pop() == 'rec' ? 'receiver' : 'sender'
+	constructor() {
+		this.type = location.pathname.split('/').pop() == 'rec' 
+			? 'receiver' 
+			: 'sender'
 	}
 
 	async init() {
 		this._vlocal = __('#vlocal')
 		this._vremote = __('#vremote')
+		this._main = __('main')
 		this._messages = __('#messages')
 		this._message = __('#message')
 		this._send = __('#send')
 		this._close = __('#close')
-		this._receiver = __('#receiver')
+		this._full = __('#full')
 
 		this.led.peer = __('#sta-peer')
 		this.led.media = __('#sta-media')
@@ -64,7 +68,8 @@ class MessageClass {
 		__e(e => this.messageKeyDown(e), this._message, 'keydown')
 		__e(e => this.sendMessage(e), this._send)
 		__e(e => this.closeChat(e), this._close)
-		__e(e => this.setType(e), this._receiver, 'change')
+
+		__e(() => this.full(), this._full)
 
 		this.start()
 	}
@@ -88,7 +93,7 @@ class MessageClass {
 	}
 
 	async initMedia() {
-		if (this.type == 'sender') this.stream.media.video = true
+		if (this.type == 'sender') this.stream.media.video = { facingMode: 'user' }
 
 		this._vlocal.srcObject = null
 		this.stream.local = null
@@ -120,7 +125,7 @@ class MessageClass {
 
 	addMessage(msg, type = 'local') {
 		this._messages.innerHTML += `<div class="msg${type == 'local' ? ' me' : ''}">${msg}</div>`
-		this._messages.scrollTo(0, this._messages.scrollHeight)
+		this._main.scrollTo(0, this._main.scrollHeight)
 	}
 
 	closeChat() {
@@ -128,8 +133,18 @@ class MessageClass {
 		// console.log('Connection destroyed')
 	}
 
+	full() {
+		if(__('header').classList.contains('chat')) {
+			__('header').classList.remove('chat')
+			__('#full span').innerHTML = 'fullscreen_exit'
+		} else {
+			__('header').classList.add('chat')
+			__('#full span').innerHTML = 'fullscreen'
+		}
+	}
 
-	// --------------------------------------------------------------------------------- PEER
+
+	// ------------------------------------------------------------ PEER [begin]
 	join() {
 		// Close old connection
 		if (this.conn) this.conn.close()
@@ -232,9 +247,13 @@ class MessageClass {
 		this.peerConnection = new RTCPeerConnection();
 
 		// Add local stream to PeerConnection
-		this.stream.local.getTracks().forEach(track => 
-			this.peerConnection.addTrack(track, this.stream.local)
-		)
+		try {
+			this.stream.local.getTracks().forEach(track =>
+				this.peerConnection.addTrack(track, this.stream.local)
+			)
+		} catch (e) {
+			console.log(e)
+		}
 
 		//console.log('createPeerConnection', this.peerConnection)
 
@@ -253,17 +272,7 @@ class MessageClass {
 		};
 	}
 
-
-
-
-	// --------------------------------------------------------------------------------- PEER [END]
-
-	setType() {
-		console.log("TYPE", this._receiver.checked)
-		this.type = this._receiver.checked ? 'receiver' : 'sender'
-		this.start()
-	}
-
+	// -------------------------------------------------------------- PEER [END]
 
 	setLed(led, status) {
 		if (status == 'toggle') status = !this.led[led].classList.contains('on')

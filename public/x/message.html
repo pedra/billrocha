@@ -10,13 +10,16 @@
 	<script src="/x/js/message.mjs" type="module" defer></script>
 </head>
 
-<body>
+<body class="dark">
 
-	<header>
+	<header class="chat">
 		<div class="container">
 			<div class="display">
 				<video id="vlocal" autoplay playsinline muted></video>
 				<video id="vremote" autoplay playsinline></video>
+				<button id="full">
+					<span class="material-symbols-outlined">fullscreen</span>
+				</button>
 			</div>			
 		</div>
 	</header>
@@ -56,12 +59,6 @@
 					<span></span>
 					status
 				</div>
-			</div>
-
-			<div class="config">
-				<label for="receiver">
-					<input type="checkbox" id="receiver">It's a receiver (restart)
-				</label>
 			</div>
 		</div>
 	</footer>

@@ -8,4 +8,50 @@
 @import url(./commum/page.css);
 @import url(./page/message.css);
 
+body.dark {
+	background: #012;
+    color: #999;
+}
+
+body.dark .messages .msg.me {
+	color: #678;
+}
+
+body.dark .controls {
+	background: rgb(0 0 0 / 21%);
+	border: none;
+	padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin: 0 -1rem;
+}
+
+body.dark .controls * {
+	color: #fff;
+}
+
+
+
+header.chat .display {
+    position: relative;
+    z-index: 2000;
+    height: 72px;
+    bottom: auto;
+    padding: 1rem;
+}
+
+header.chat .display #vlocal {
+    position: relative;
+    background: #000;
+    border: none;
+    height: 100%;
+	width: auto;
+	inset: auto;
+}
+
+header.chat .display #vremote {
+    position: relative;
+    height: 100%;
+	aspect-ratio: auto;
+    width: auto;
+}
+
 

@@ -3,8 +3,17 @@ body {
 	height: 100vh;
 }
 
+header {
+	position: relative;
+    background: #000;
+    box-shadow: 0 20px 40px rgb(0 0 0 / 74%);
+}
+
 main {
-    margin-top: 210px;
+    /* margin-top: 210px; */
+	position: relative;
+	scroll-behavior: smooth;
+	overflow: hidden auto;
 }
 
 main .container {
@@ -16,31 +25,42 @@ main .container {
 }
 
 main .container.chat {
-	position: absolute;
-	inset: 0;
+	/* position: absolute; */
+	/* inset: 0; */
 }
 
 .display {
     background: #000;
     position: fixed;
-    top: 1rem;
+    inset: 0;
     z-index: 2000;
-	height: 195px;
 }
 
 .display #vremote {
+	position: relative;
     width: 100%;
     height: 100%;
-    aspect-ratio: 16/9;
+    /* aspect-ratio: 16/9; */
 }
 
 .display #vlocal {
     position: absolute;
     background: #000;
-    border: 1px solid #fff;
-    bottom: 0;
-    right: 0;
+    border: 1px solid #666;
+    bottom: 1rem;
+    right: 1rem;
     width: 25%;
+}
+
+.display #full {
+    z-index: 2000;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: #999;
+    border: none;
+    cursor: pointer;
 }
 
 .messages {
@@ -105,31 +125,6 @@ main .container.chat {
     opacity: 0.3;
 }
 
-
-.config {
-    /* padding: 0.5rem; */
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.config input[type="checkbox"],
-.config input[type="radio"] {
-    width: 1rem;
-    height: 1rem;
-    appearance: auto;
-}
-
-.config label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-	padding: 0;
-	margin: 0.2rem 0 0 0;
-}
-
-
 .status {
    	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(86px, 2fr));
@@ -147,7 +142,6 @@ main .container.chat {
     background: #ccc;
     height: 1rem;
     width: 1rem;
-    box-shadow: 0 0 2px #fff;
 }
 
 .status div.on span {
